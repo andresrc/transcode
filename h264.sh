@@ -18,4 +18,4 @@ function error_exit
 
 # Convert file
 
-ffmpeg -i "$1" -c:v libx264 -crf 20 -preset veryslow -c:a libfaac -b:a 128k -ac 2 "$2" || error_exit "FFmpeg returned with error" 3 
+ffmpeg -i "$1" -map 0 -c:v libx264 -crf 20 -preset veryslow -c:a libfaac -b:a 128k -ac 2 "$2" || error_exit "FFmpeg returned with error" 3 
